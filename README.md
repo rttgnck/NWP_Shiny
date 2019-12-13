@@ -21,9 +21,9 @@ The check prediction against book is horribly inaccurate in predicting the autho
 
 Only books 1-10 in 1900's are included.
 
-1. Set the working directory using "setwd('path_to_where_R_scripts_and_data_are_stored')"
-2. Start the tokenization and modelling from scratch with "source('preword_runner.r')" each script ends by starting the next.
-3. Command line interface starts when the preword_modeler finishes. You can jump straight to this part skipping the tokenization and modelling if you have already ran steps 1 and 2 by using starting the preword_interface file with source(). 
+1. Set the working directory using `setwd('path_to_where_R_scripts_and_data_are_stored')`
+2. Start the tokenization and modelling from scratch with `source('preword_runner.r')` each script ends by starting the next.
+3. Command line interface starts when the preword_modeler finishes. You can jump straight to this part skipping the tokenization and modeling by using `source('preword_interface.r')` 
 The command line interface explains itself while running.
 
 ## Below is unchanged from the original NWP_Shiny app to maintain the original authors explanation (better than mine) and still applies, it has not been updated to include any of my changes present in the source code except for removing the testing  and shiny app sections.
