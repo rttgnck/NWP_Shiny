@@ -1,21 +1,18 @@
 
-# Next Word Prediction - Shiny Web Application
+# Next Word Prediction and Beyond in R
 
-Next word prediction (NWP) is the task of suggesting the most probable word a user will type next. This is a part of natural language processing (NLP) which can be applied in many areas where text is inserted using a keyboard. An example of NWP application is the [SwiftKey smart keyboard](http://swiftkey.com) which aims at improving the typing experience on small mobile phone. Beyond improving keystroke efficiency, literature points out other benefits of word prediction including the improvement of the quality and quantity of written work, enhancement in the development of written literacy skills, along with spelling assistance to people with various levels of spelling disorder [1,2].
+This project is a fork of https://github.com/duf59/NWP_Shiny with some additionally code for tokenizing from https://thiloshon.wordpress.com/2018/03/11/build-your-own-word-sentence-prediction-application-part-02/.
 
-NWP is based on the analysis of a corpus (large text files) resulting in probability distributions over the different sequences of words occurring in the corpus.
-The resulting language model is then used for predicting the most likely next word.
-
-This repo contains code to build such a language model with R, save it into a local SQLite database and query the database from a shiny web application to perform predictions. Preprocessing of the corpus requires [MeTa](https://meta-toolkit.org/), a C++ data science toolkit developed at the [UIUC](http://cs.illinois.edu/) and used for text mining research.
-
-The application can be accessed [here](https://duf59.shinyapps.io/NWPapp).
+Using lines of text sampled from dated Project Gutenberg texts, I used the above to build language models from the sampled data and produce a word prediction command line interface in R. I expanded the language modelling of the NWP_Shiny project from 3-word n-grams up to 7-word n-grams. This change allowed me to prdict up to the next 6 words (based on a singular word input). However the prediction at such a high order is only reliable if the training data was extremely large, otherwise the number of 5, 6, or 7 n-grams found in the training data can be very low (10-100 for 7-grams in the included data).
 
 # Files
 
-* `model_builder.R` : script to build the model
-* `helpers.R` : helper functions
-* `predict.R` : functions to perform prediction based on the language model
-* `shinyAPP/` : R code for the shiny server and user interface
+* `preword_tokenizer.R` : script to do the tokenization
+* `preword_modeller.R` : script to do the language modelling
+* `preword_predictor.R` : script for doing the predictions
+* `preword_interface.R` : script for command line user interface in R
+
+# Below is unchanged from the original NWP_Shiny app to maintain the original authors explanation (better than mine) and still applies, it has not been updated to include any of my changes present in the source code except for the testing section at the end.
 
 # Building the language model
 
@@ -86,7 +83,7 @@ Once KN models of order 1 to 4 are computed, they are stored in a local SQLite d
 I used the SQLite R package for this.
 When predicting, one can simply connect to the database and retrieve specific word sequences using SQL queries.
 
-### Testing
+### Testing (CHANGES MADE TO REFLECT THIS FORKS SOURCE CODE)
 
 predict.R includes a predict() function which can be used to test the algorithm.
 It takes as inputs:
@@ -98,7 +95,7 @@ This sentence is preprocessed in the same way than the initial corpus used to bu
 * **npred**: number of potential next word to predict
 * **max_order**: order of the highest order model, by default 4
 
-# The shiny App
+# The shiny App (NO LONGER PRESENT)
 
 The shiny web application requieres the language model stored in a SQLite database in the data/ sub-folder. Database name is assumed to be 'data/NWP.SQLite'.
 User interface is very basic and the server uses the predict() function (same one as in predict.R, located in shinyAPP/helpers.R).
