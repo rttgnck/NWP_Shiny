@@ -13,7 +13,7 @@ Using lines of text sampled from dated Project Gutenberg texts, I used the above
 * `preword_predictor.R` : script for doing the predictions
 * `preword_interface.R` : script for command line user interface in R
 
-### Testing (CHANGES MADE TO REFLECT THIS FORK'S SOURCE CODE)
+### Testing
 
 I have only included the data necessary to get started from scratch as the database on my machine was over 1gb. The included source code will run and build a 1900's language model. In order to build an alternative language model for the 1800's a few changes will need to be made anywhere a lib1900 or lines1900 is present in the code replacing the 1900 with 1800. I have also included the 1600's and 1700's data, but there were much fewer books to sample than the 1800's and 1900's.
 
