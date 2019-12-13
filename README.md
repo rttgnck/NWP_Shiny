@@ -83,7 +83,7 @@ Once KN models of order 1 to 4 are computed, they are stored in a local SQLite d
 I used the SQLite R package for this.
 When predicting, one can simply connect to the database and retrieve specific word sequences using SQL queries.
 
-### Testing (CHANGES MADE TO REFLECT THIS FORKS SOURCE CODE)
+### Testing (CHANGES MADE TO REFLECT THIS FORK'S SOURCE CODE)
 
 predict.R includes a predict() function which can be used to test the algorithm.
 It takes as inputs:
