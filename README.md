@@ -15,9 +15,9 @@ Using lines of text sampled from dated Project Gutenberg texts, I used the above
 
 ### Testing
 
-I have only included the data necessary to get started from scratch as the database on my machine was over 1gb. The included source code will run and build a 1900's language model. In order to build an alternative language model for the 1800's a few changes will need to be made anywhere a lib1900 or lines1900 is present in the code replacing the 1900 with 1800. I have also included the 1600's and 1700's data, but there were much fewer books to sample than the 1800's and 1900's.
+The included source code will run and build a 1900's language model. In order to build an alternative language model for the 1800's a few changes will need to be made anywhere a lib1900 or lines1900 is present in the code replacing the 1900 with 1800. I have also included the 1600's and 1700's data, but there were much fewer books to sample than the 1800's and 1900's.
 
-Checking the prediction against a book is not possible although still enabled in the code and the library index files are included. This is because the original database of books is over 20GBs of data. Maybe in the future changes to the code could be made and a small subset of books could be included for demonstration.
+The check prediction against book is horribly inaccurate in predicting the authors next words. This is because only every 25th line was sampled from the original works thus most lines are not included in the original training data. There is the possibility of expansion, with enough training data, to rewrite the sampler (not included) to split on sentence, and capture entire books, or works of authors. This could possibly lead to being able to take a book from the author not included in training data and trying to predict parts of sentences in that book. This was what I originally wanted to do, but is not how the current version works. 
 
 1. Set the working directory using "setwd('path_to_where_R_scripts_and_data_are_stored')"
 2. Start the tokenization and modelling from scratch with "source('preword_runner.r')" each script ends by starting the next.
