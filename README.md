@@ -1,5 +1,5 @@
 
-# Next Word Prediction and Beyond in R
+# Next Word and Beyond Prediction in R
 
 This project is a fork of https://github.com/duf59/NWP_Shiny with some additionally code for tokenizing from https://thiloshon.wordpress.com/2018/03/11/build-your-own-word-sentence-prediction-application-part-02/.
 
