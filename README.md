@@ -15,11 +15,9 @@ Using lines of text sampled from dated Project Gutenberg texts, I used the above
 
 ### Testing (CHANGES MADE TO REFLECT THIS FORK'S SOURCE CODE)
 
-If you only wish to try the interface you must try jump to step 3 as steps 1 and 2 will overwrite the prediction database.
-
 1. Set the working directory using "setwd('path_to_where_R_scripts_and_data_are_stored')"
 2. Start the tokenization and modelling from scratch with "source('preword_runner.r')" each script ends by starting the next.
-3. Command line interface starts when the preword_modeler finishes. You can jump straight to this part skipping the tokenization and modelling if you start the preword_interface file with source(). 
+3. Command line interface starts when the preword_modeler finishes. You can jump straight to this part skipping the tokenization and modelling if you have already ran steps 1 and 2 by using starting the preword_interface file with source(). 
 The command line interface explains itself while running.
 
 # Below is unchanged from the original NWP_Shiny app to maintain the original authors explanation (better than mine) and still applies, it has not been updated to include any of my changes present in the source code except for removing the testing  and shiny app sections.
