@@ -93,7 +93,7 @@ When predicting, one can simply connect to the database and retrieve specific wo
 
 ### Testing (CHANGES MADE REFLECTED IN ABOVE TESTING SECTION)
 
-# The shiny App (NO LONGER PRESENT, REPLACED WITH COMMAND LINE PREWORD_INTERFACE)
+### The shiny App (NO LONGER PRESENT, REPLACED WITH COMMAND LINE PREWORD_INTERFACE)
 
 # References and notes
 
