@@ -17,12 +17,14 @@ Using lines of text sampled from dated Project Gutenberg texts, I used the above
 
 I have only included the data necessary to get started from scratch as the database on my machine was over 1gb. The included source code will run and build a 1900's language model. In order to build an alternative language model for the 1800's a few changes will need to be made anywhere a lib1900 or lines1900 is present in the code replacing the 1900 with 1800. I have also included the 1600's and 1700's data, but there were much fewer books to sample than the 1800's and 1900's.
 
+Checking the prediction against a book is not possible although still enabled in the code. This is because the original database of books is over 20GBs of data. Maybe in the future changes to the code could be made and a small subset of books could be included for demonstration.
+
 1. Set the working directory using "setwd('path_to_where_R_scripts_and_data_are_stored')"
 2. Start the tokenization and modelling from scratch with "source('preword_runner.r')" each script ends by starting the next.
 3. Command line interface starts when the preword_modeler finishes. You can jump straight to this part skipping the tokenization and modelling if you have already ran steps 1 and 2 by using starting the preword_interface file with source(). 
 The command line interface explains itself while running.
 
-# Below is unchanged from the original NWP_Shiny app to maintain the original authors explanation (better than mine) and still applies, it has not been updated to include any of my changes present in the source code except for removing the testing  and shiny app sections.
+## Below is unchanged from the original NWP_Shiny app to maintain the original authors explanation (better than mine) and still applies, it has not been updated to include any of my changes present in the source code except for removing the testing  and shiny app sections.
 
 # Building the language model
 
