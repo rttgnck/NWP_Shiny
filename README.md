@@ -7,12 +7,22 @@ Using lines of text sampled from dated Project Gutenberg texts, I used the above
 
 # Files
 
+* `preword_runner.R` : script to start the tokenization > modelling > interface process
 * `preword_tokenizer.R` : script to do the tokenization
 * `preword_modeller.R` : script to do the language modelling
 * `preword_predictor.R` : script for doing the predictions
 * `preword_interface.R` : script for command line user interface in R
 
-# Below is unchanged from the original NWP_Shiny app to maintain the original authors explanation (better than mine) and still applies, it has not been updated to include any of my changes present in the source code except for the testing section at the end.
+### Testing (CHANGES MADE TO REFLECT THIS FORK'S SOURCE CODE)
+
+If you only wish to try the interface you must try jump to step 3 as steps 1 and 2 will overwrite the prediction database.
+
+1. Set the working directory using "setwd('path_to_where_R_scripts_and_data_are_stored')"
+2. Start the tokenization and modelling from scratch with "source('preword_runner.r')" each script ends by starting the next.
+3. Command line interface starts when the preword_modeler finishes. You can jump straight to this part skipping the tokenization and modelling if you start the preword_interface file with source(). 
+The command line interface explains itself while running.
+
+# Below is unchanged from the original NWP_Shiny app to maintain the original authors explanation (better than mine) and still applies, it has not been updated to include any of my changes present in the source code except for removing the testing  and shiny app sections.
 
 # Building the language model
 
@@ -83,22 +93,9 @@ Once KN models of order 1 to 4 are computed, they are stored in a local SQLite d
 I used the SQLite R package for this.
 When predicting, one can simply connect to the database and retrieve specific word sequences using SQL queries.
 
-### Testing (CHANGES MADE TO REFLECT THIS FORK'S SOURCE CODE)
+### Testing (CHANGES MADE REFLECTED IN ABOVE TESTING SECTION)
 
-predict.R includes a predict() function which can be used to test the algorithm.
-It takes as inputs:
-
-* **database**:  the SQLite database containing the language model
-* **raw_input**: the input sentence from which we want to predict the next word.
-This sentence is preprocessed in the same way than the initial corpus used to build the model.
-* **method**: either "qML" for maximum likelihood estimation or "KN" for kneyser-Ney smoother probability based prediction
-* **npred**: number of potential next word to predict
-* **max_order**: order of the highest order model, by default 4
-
-# The shiny App (NO LONGER PRESENT)
-
-The shiny web application requieres the language model stored in a SQLite database in the data/ sub-folder. Database name is assumed to be 'data/NWP.SQLite'.
-User interface is very basic and the server uses the predict() function (same one as in predict.R, located in shinyAPP/helpers.R).
+# The shiny App (NO LONGER PRESENT, REPLACED WITH COMMAND LINE PREWORD_INTERFACE)
 
 # References and notes
 
